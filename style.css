@@ -1,0 +1,43 @@
+body {
+    background-image: url('https://images.alphacoders.com/133/1339879.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #111827;
+}
+
+/* --- ЖАҢА: Plyr видео плеерінің негізгі түсін өзгерту --- */
+:root {
+    --plyr-color-main: #8b5cf6; /* Purple color */
+}
+
+/* --- Аниме карточкасының үстіне шығатын эффект --- */
+.anime-card .overlay {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.anime-card:hover .overlay {
+    opacity: 1;
+}
+
+/* --- Кириш/Рўйхатдан ўтиш ойнаси (өзгеріссіз) --- */
+.auth-modal-content {
+    background: linear-gradient(-45deg, #1e1b4b, #4c1d95, #312e81, #5b21b6);
+    background-size: 400% 400%;
+    animation: gradient-move 15s ease infinite;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+@keyframes gradient-move {
+    0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; }
+}
+.tab-button {
+    flex-grow: 1; padding: 0.75rem; cursor: pointer; text-align: center; font-weight: 600; color: #a7a7a7;
+    border-bottom: 2px solid transparent; transition: all 0.3s ease;
+}
+.tab-button.active { color: #ffffff; border-bottom-color: #8b5cf6; }
+.tab-button:not(.active):hover { color: #d1d1d1; }
+
+/* Scrollbar стилі */
+#details-modal-content::-webkit-scrollbar { width: 8px; }
+#details-modal-content::-webkit-scrollbar-track { background: #1f2937; }
+#details-modal-content::-webkit-scrollbar-thumb { background-color: #4c1d95; border-radius: 4px; }
