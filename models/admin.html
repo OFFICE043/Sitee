@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uz" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Paneli - Anime Olami</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #111827; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1f2937; }
+        ::-webkit-scrollbar-thumb { background-color: #4c1d95; border-radius: 4px; }
+    </style>
+</head>
+<body class="text-gray-200">
+    <div class="container mx-auto p-8">
+        <div class="flex justify-between items-center mb-8">
+            <h1 class="text-3xl font-bold text-white">Admin Paneli</h1>
+            <a href="/" class="text-purple-400 hover:text-purple-300">Сайтқа қайту &rarr;</a>
+        </div>
+
+        <div class="bg-gray-800 p-6 rounded-lg mb-8">
+            <h2 class="text-xl font-bold mb-4">Yangi Anime Qo'shish</h2>
+            <form id="add-anime-form" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input type="text" id="title" placeholder="Nomi" class="bg-gray-700 p-2 rounded" required>
+                <input type="number" id="year" placeholder="Yili" class="bg-gray-700 p-2 rounded">
+                <input type="text" id="imageUrl" placeholder="Rasm URL manzili" class="bg-gray-700 p-2 rounded" required>
+                <input type="number" id="score" step="0.1" placeholder="Reytingi" class="bg-gray-700 p-2 rounded">
+                <textarea id="description" placeholder="Tavsifi" class="bg-gray-700 p-2 rounded col-span-full" required></textarea>
+                <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded col-span-full">Qo'shish</button>
+            </form>
+        </div>
+
+        <div>
+            <h2 class="text-xl font-bold mb-4">Mavjud Animelar</h2>
+            <div class="bg-gray-800 rounded-lg overflow-hidden">
+                <table class="w-full">
+                    <thead class="bg-gray-700">
+                        <tr>
+                            <th class="p-3 text-left">Nomi</th>
+                            <th class="p-3 text-left">Yili</th>
+                            <th class="p-3 text-left">Reytingi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="anime-list">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>
